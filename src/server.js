@@ -53,7 +53,7 @@ app.put("/pokemons/:id",(req, res)=>{
 //Remove um pokemon   
 app.delete("/pokemons/:id",(req, res)=>{
     res.send(database.deletarPokemon(req.params.id))
-    return pokemonDeletado
+    //return pokemonDeletado
 })
 
 //Remove todos os pokemons

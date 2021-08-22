@@ -76,29 +76,25 @@ function batalhaPokemon(id1, id2){
 
 function curaPokemon(id) {
     const pokemon = pokemons[id]
+    const  hpInicial = pokemon.hp
     const pocao = 20
 
     if(pokemon.hp >= 0 && pokemon.hp <=80) {
         pokemon.hp = pokemon.hp + pocao
-        resultadoCura = `Seu pokemon tinha ${pokemon.hp} de hp e reccebeu uma dose da poção de cura!`
+        resultadoCura = `O pokemon ${pokemon.nome} tinha ${hpInicial} de hp, reccebeu uma dose da poção de cura e agora tem  ${pokemon.hp} de hp!`
     }else if(pokemon.hp == 90){
         pokemon.hp =  pokemon.hp + pocao/2
-        resultadoCura = "Seu pokemon ainda tinha 10 de hp e reccebeu apenas meia-dose da poção de cura!"
+        resultadoCura = `O pokemon ${pokemon.nome} ainda tinha ${hpInicial} de hp e reccebeu apenas meia-dose da poção de cura!`
         }else{
-        resultadoCura = `Seu pokemon tem  ${pokemon.hp} de hp e não pode receber a poção de cura!`
+        resultadoCura = `O pokemon ${pokemon.nome} tem  ${hpInicial} de hp e não pode receber mais nenhuma dose da poção de cura!`
         }
-
     
-    return `${pokemon.nome}: ${pokemon.hp} : ${resultadoCura}`
-    
+    return `O Centro de Cura informa:  ${resultadoCura}`   
 }
-
-
 
 function deletarPokemons(){
     pokemons.splice(0,pokemons.length)
     return {}
-
 }
 
 
